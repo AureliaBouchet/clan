@@ -1,4 +1,7 @@
 class RepaymentsController < ApplicationController
-  def show
+  def create
+  end
+
+  def new
   end
 end

@@ -1,2 +1,8 @@
 <h1>Consultez les subventions</h1>
 <p> </p>
+<% @subsidies.each do |subsidy| %>
+  <%= subsidy.name %>
+  <%= subsidy.start_date %>
+  <%= subsidy.end_date %>
+  <%= subsidy.amount %>
+<% end %>
