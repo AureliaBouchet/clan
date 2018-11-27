@@ -4,4 +4,6 @@ class Repayment < ApplicationRecord
   validates :amount, presence: true
 
   belongs_to :subsidy
+
+  mount_uploader :photo, PhotoUploader
 end

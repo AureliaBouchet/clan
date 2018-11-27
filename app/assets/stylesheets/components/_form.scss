@@ -1,0 +1,45 @@
+
+.form{
+  position: relative;
+  padding-bottom: 50px;
+  width: 100%;
+  padding: 0 30px 40px 30px;
+}
+.form-item{
+  display: flex;
+  margin: 10px 0;
+  padding: 20px 0;
+  border-bottom: 1px solid #efefef;
+  align-items: center;
+}
+.form-input{
+  p{
+    margin: 0;
+  }
+}
+
+.form-label{
+  width: 110px;
+  font-style: bold;
+  font-size: 16px;
+  color: #29B7C9;
+}
+
+.form-link{
+  position: absolute;
+  right:50px;
+  bottom: 0px;
+}
+
+.repayment-subsidy{
+  padding: 20px;
+}
+
+#repayment_mail{
+  width: 300px;
+}
+@media(max-width: 600px) {
+  #repayment_mail{
+    width: 200px;
+  }
+}

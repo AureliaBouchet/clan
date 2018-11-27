@@ -1,0 +1,44 @@
+<div class="banner">
+
+<div class="repayment-photo banner-item">
+  <div class="repayment-link-back">
+    <%= link_to  subsidies_path, class: "btn-light" do %>
+      <i class="fas fa-long-arrow-alt-left"> </i> Retour à la liste des subventions
+    <% end %>
+  </div>
+</div>
+<div class="repayment-form banner-item">
+  <h1>Demande de remboursement</h1>
+  <div class="form">
+    <div class="form-item">
+        <div class="form-label">Subventions</div>
+        <div class="form-input"><p> <%= @subsidy.name %> </p> <p> Dates d'ouverture des droits : du <%= l(@subsidy.start_date, :format => '%d.%m.%Y') %> au <%= l(@subsidy.end_date, :format => '%d.%m.%Y') %> </p></div>
+      </div>
+    <%= simple_form_for [@subsidy, @repayment] do |f| %>
+      <%#= f.input :mail, label: 'Mail', wrapper_html: { class: 'inline' } %>
+      <div class="form-item">
+        <div class="form-label">Mail*</div>
+        <div class="form-input"><%= f.input_field :mail, placeholder: "_" %></div>
+      </div>
+      <%#= f.input :amount, label: 'Montant'%>
+        <p>Rappel du montant autorisé: <%= @subsidy.amount %> €</p>
+      <div class="form-item">
+        <div class="form-label">Montant*</div>
+        <div class="form-input"><%= f.input_field :amount, placeholder: "_" %> €</div>
+      </div>
+            <div class="form-item">
+        <div class="form-label">Justificatif*</div>
+        <div class="form-input"><%= f.input_field :photo %>
+          <%= f.input :photo_cache, as: :hidden %>
+        </div>
+
+      </div>
+      <%#= f.input :photo, label: 'Justificatif' %>
+
+      <div class="form-link">
+        <%= f.submit "Envoyer", class: "btn-green" %>
+      </div>
+    <% end %>
+  </div>
+</div>
+</div>

@@ -1,0 +1,59 @@
+.small-banner{
+   background: asset-url('activities.jpeg');
+   background-size: cover;
+   height: 50vh;
+   width: 100vw;
+}
+
+.banner{
+  height: 100vh;
+  display: flex;
+}
+
+.title{
+  font-size: 80px;
+  margin-bottom: 30px;
+}
+
+.subtitle{
+  font-size: 20px;
+  margin-bottom: 30px;
+}
+
+@media(max-width: 600px) {
+.banner {
+    flex-direction: column;
+  }
+}
+.banner-photo{
+  background-image: asset-url('home.png');
+  background-size: cover;
+}
+
+.repayment-photo{
+  background-image: asset-url('receipt.png');
+  background-size: cover;
+  position: relative;
+}
+.repayment-link-back{
+  position: absolute;
+  top: 20px;
+}
+.banner-item{
+  width: 50vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+}
+
+@media(max-width: 600px) {
+  .banner-item {
+     width: 100vw;
+  }
+}
+.banner-content{
+
+  text-align: center;
+}

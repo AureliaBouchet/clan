@@ -1,0 +1,34 @@
+.btn-green{
+  border-radius: 1px;
+  padding: 10px 20px;
+  background-color: #00CFC3;
+  font-size: 14px;
+  color: white ;
+  a{
+  color: white ;
+  text-decoration: none;
+  }
+  &:hover {
+    color: white ;
+    text-decoration: none;
+    background-color: #29B7C9;
+  }
+}
+
+.btn-light{
+  border-radius: 1px;
+  padding: 10px 20px;
+  font-size: 14px;
+  color: white ;
+  border: solid 1px white;
+  a{
+  color: white ;
+  text-decoration: none;
+  }
+  &:hover {
+    color: white;
+    text-decoration: none;
+    font-style: bold;
+
+  }
+}
