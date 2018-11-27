@@ -9,13 +9,19 @@ class RepaymentsController < ApplicationController
     @repayment = Repayment.new(repayment_params)
     @subsidy = Subsidy.find(params[:subsidy_id])
     @repayment.subsidy_id = @subsidy.id
-    if @repayment.save
-      redirect_to subsidies_path
-      flash[:notice] = "Votre demande de remboursement a bien été prise en compte"
+    if @repayment.amount.nil? || @repayment.amount <= @subsidy.amount
+      if @repayment.save
+        flash[:notice] = "Votre demande de remboursement a bien été prise en compte"
+        render :new_success
+      else
+        flash[:alert] = "Vous devez remplir les champs obligatoires"
+        render :new
+      end
     else
-      flash[:alert] = "Vous devez remplir les champs obligatoires"
+      flash[:alert] = "Le montant du remboursement ne doit pas excéder le maximum autorisé"
       render :new
     end
+
   end
 
   # def index

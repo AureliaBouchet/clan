@@ -1,8 +1,12 @@
 .small-banner{
-   background: asset-url('activities.jpeg');
+   background-image: linear-gradient(rgba(0,0,0,0.3), rgba(150,150,150,0.3)), asset-url('activities.jpeg');
    background-size: cover;
-   height: 50vh;
+   height: 120px;
    width: 100vw;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+
 }
 
 .banner{
@@ -45,7 +49,6 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-
 }
 
 @media(max-width: 600px) {

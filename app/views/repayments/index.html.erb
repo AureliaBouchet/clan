@@ -1,7 +1,0 @@
-<% @repayments.each do |repayment| %>
-<div class="" style="width: 400px; height: 300px; background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path repayment.photo, height: 300, width: 400, crop: :fill  %>);">
-  <%= repayment.mail %>
-  <%= repayment.amount %>
-
-  </div>
-<% end %>

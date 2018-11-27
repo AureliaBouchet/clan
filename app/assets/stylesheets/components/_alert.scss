@@ -5,11 +5,20 @@
 .alert {
   margin: 0;
   text-align: center;
-  color: white;
+  color: #c4385e;
+  font-size: 14px;
+  font-style: italic;
 }
 .alert-info {
   background: $green;
 }
 .alert-warning {
   background: $red;
+}
+.notice {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #29B7C9;
+  font-size: 14px;
+  font-style: italic;
 }

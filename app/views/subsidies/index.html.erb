@@ -1,26 +1,39 @@
-<div class="small-banner">
-</div>
-<!-- <h1>Consultez les subventions</h1> -->
+<div class="index-page">
+  <div class="small-banner">
+    <%= link_to "CLAN", root_path, class: "btn-logo" %>
+  </div>
 
-<div class="cards">
-  <% @subsidies.each do |subsidy| %>
-    <div class="card">
-      <h3> <%= subsidy.name %> </h3>
-      <div class="card-item">
-        <h4> <i class="fas fa-calendar"></i> </h4> <p> Dates d'ouverture de la subvention : du <%= l(subsidy.start_date, :format => '%d.%m.%Y') %> au <%= l(subsidy.end_date, :format => '%d.%m.%Y') %> </p>
-      </div>
-      <div class="card-item">
-        <h4> <i class="fas fa-euro-sign"></i> </h4> <p>Montant : <%= subsidy.amount %> euros</p>
-      </div>
-      <% if (@today_date >= subsidy.start_date) && (@today_date <= subsidy.end_date)%>
-        <div class="card-link">
-          <%= link_to "Demande de remboursement", new_subsidy_repayment_path(subsidy), class: "btn-green" %>
+  <div class="cards">
+    <% @subsidies.each do |subsidy| %>
+      <div class="card">
+
+        <h3> <%= subsidy.name %> </h3>
+
+        <div class="card-item">
+          <h4> <i class="fas fa-calendar"></i> </h4>
+          <p> Dates d'ouverture de la subvention : du <%= l(subsidy.start_date, :format => '%d.%m.%Y') %> au <%= l(subsidy.end_date, :format => '%d.%m.%Y') %>
+         - <span style= "color: #29B7C9; font-style: italic;">Il reste <%= (subsidy.end_date - @today_date).to_i %> jours pour bénéficier de la subvention</span></p>
         </div>
-      <% elsif (@today_date > subsidy.end_date) %>
-        <div class="card-link inactive-subsidy"> <p>Cette subvention n'est plus active</p></div>
-      <% elsif (@today_date < subsidy.start_date) %>
-        <div class="card-link inactive-subsidy"> <p>Cette subvention n'est pas encore active</p></div>
-      <% end %>
-    </div>
-  <% end %>
+
+        <div class="card-item">
+          <h4> <i class="fas fa-euro-sign"></i> </h4> <p>Montant autorisé : <%= subsidy.amount %> euros</p>
+        </div>
+
+        <div class="card-item">
+          <h4> <i class="fas fa-users"></i> </h4> <p>Nombre de participants : <%= subsidy.repayments.count %></p>
+        </div>
+
+        <% if (@today_date >= subsidy.start_date) && (@today_date <= subsidy.end_date)%>
+          <div class="card-link">
+            <%= link_to "Demande de remboursement", new_subsidy_repayment_path(subsidy), class: "btn-green" %>
+          </div>
+        <% elsif (@today_date > subsidy.end_date) %>
+          <div class="card-link inactive-subsidy"> <p>Cette subvention n'est plus active</p></div>
+        <% elsif (@today_date < subsidy.start_date) %>
+          <div class="card-link inactive-subsidy"> <p>Cette subvention n'est pas encore active</p></div>
+        <% end %>
+
+      </div>
+    <% end %>
+  </div>
 </div>

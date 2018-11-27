@@ -1,12 +1,32 @@
+.index-page{
+  position: relative;
+}
+
 .cards{
+  // position: absolute;
+  // top: 60px;
+  // left: 25%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   // max-width: 600px;
-  max-width: 600px;
-  margin: 0 auto;
+  max-width: 650px;
+  margin: 20px auto;
+  background-color: rgba(250, 250, 250, 0.6);
+  // padding: 40px;
 }
+
+// @media(max-width: 1000px) {
+//   .cards {
+//     left: 20%;
+//   }
+// }
+// @media(max-width: 800px) {
+//   .cards {
+//     left: 3%;
+//   }
+// }
 
 .card{
   width: 100%;
@@ -26,6 +46,7 @@
     font-style: bold;
     margin-top: 0;
     margin-right: 5px;
+    width: 30px;
   }
 }
 
@@ -33,6 +54,7 @@
   display: flex;
   margin-bottom: 10px;
   margin-left: 20px;
+  align-items: center;
 }
 
 .card-link{

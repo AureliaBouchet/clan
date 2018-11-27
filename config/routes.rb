@@ -3,5 +3,4 @@ Rails.application.routes.draw do
   resources :subsidies, only: :index do
     resources :repayments, only: [:new, :create]
   end
-    # resources :repayments, only: [:index]
 end
