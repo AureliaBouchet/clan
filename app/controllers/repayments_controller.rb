@@ -2,6 +2,7 @@ class RepaymentsController < ApplicationController
   def new
     @repayment = Repayment.new
     @subsidy = Subsidy.find(params[:subsidy_id])
+    flash[:alert] = ""
   end
 
   def create
