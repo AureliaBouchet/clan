@@ -13,6 +13,7 @@
   align-items: center;
 }
 .form-input{
+    font-size: 14px;
   p{
     margin: 0;
   }
@@ -22,7 +23,7 @@
   width: 110px;
   font-style: bold;
   font-size: 16px;
-  color: #29B7C9;
+  color: $medium-green;
 }
 
 .form-link{
